@@ -1,0 +1,38 @@
+manifestVersion: 1
+id: valorgrid
+category: finance
+name: ValorGrid
+version: "3.36.0"
+tagline: Private and auditable investment portfolio tracking
+description: >-
+  ValorGrid is a local-first portfolio tracker for recording, importing and
+  analysing investment movements with SQLite persistence, local backups and a
+  browser UI. Portfolio data stays on your Umbrel server; market price lookups
+  are sent only to the configured market data provider for the requested symbol.
+releaseNotes: >-
+  This update adds encrypted backup support and improves backup and instrument handling.
+
+  - Adds optional encrypted SQLite backups using a passphrase
+  - Adds backup and decrypt flows for encrypted backup files
+  - Fixes backup listing, download, deletion, and retention when plain and encrypted backups are mixed
+  - Derives an empty instrument ticker from the Yahoo symbol when available
+
+developer: aivm23
+website: https://valorgrid.app
+dependencies: []
+repo: https://github.com/aivm23/ValorGrid
+support: https://github.com/aivm23/ValorGrid/issues
+
+port: 1325
+gallery:
+  - 1.webp
+  - 2.webp
+  - 3.webp
+  - 4.webp
+path: ""
+
+defaultUsername: ""
+defaultPassword: ""
+
+submitter: aivm23
+submission: https://github.com/getumbrel/umbrel-apps/pull/5794

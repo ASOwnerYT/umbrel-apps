@@ -1,65 +1,76 @@
 manifestVersion: 1.1
 id: immich
+storage:
+  dataRoot: data
+folderAccess:
+  - id: external-library
+    name: External Library
+    note: Select a folder containing photos or videos, then configure /mnt/external-library as an import path for an External Library in Immich. Access is read-only to protect the original files.
+    mounts:
+      - service: server
+        targetPath: /mnt/external-library
+        readOnly: true
 category: files
 name: Immich
-version: "v1.108.0"
+version: "v3.2.1"
 tagline: High-performance photo and video backup solution
 description: >-
   An open-source and high-performance self-hosted backup solution for the videos and photos on your mobile device
 
-  
+
   ⚠️ Immich is under very active development. Expect bugs and changes. Do not use it as the only way to store your photos and videos!
 
-  
+
   Features:
-  
+
   - Upload and view videos and photos
-  
+
   - Auto backup when the app is opened
-  
+
   - Selective album(s) for backup
-  
+
   - Download photos and videos to a local device
-  
+
   - Multi-user support
-  
+
   - Album and Shared albums
-  
+
   - Scrubbable/draggable scrollbar
-  
+
   - Support RAW (HEIC, HEIF, DNG, Apple ProRaw)
-  
+
   - Metadata view (EXIF, map)
-  
+
   - Search by metadata, objects and image tags
-  
+
   - Administrative functions (user management)
-  
+
   - Background backup
-  
+
   - Virtual scroll
-  
+
   - OAuth support
-  
+
   - LivePhoto backup and playback
-  
+
   - User-defined storage structure
 releaseNotes: >-
-  ⚠️ As usual, please check that your mobile app is compatible with this release of Immich.
+  This update keeps the new umbrelOS storage-management options introduced in the previous package, including optional read-only access to an existing photo or video library.
 
 
-  🚨 This release includes a security update for Node.js. While we don't think these CVEs affect Immich, we strongly recommend you update. For more details, see https://nodejs.org/en/blog/vulnerability/july-2024-security-releases.
+  ⚠️ If you're updating from a pre-v3 version, Immich v3 includes breaking API changes mostly affecting third-party tools. Check that your mobile app and any Immich integrations are compatible with this release; the Immich mobile app no longer supports iOS 14.
 
 
-  Welcome to release `v1.108.0` of Immich. This release focuses on bug fixes and improvements across the app. We added a fun section of things we learned when working on Immich. You can take a look here at the [Cursed Knowledge](https://immich.app/cursed-knowledge) page. Some of the highlights in this release include:
+  Immich v3.2.1 fixes connection pool exhaustion during sync, search modal issues, partner shared assets not appearing on people pages, person merge failures for two named people, archive/timeline and memories filtering bugs, face label and metadata extraction issues, and password-change reset behavior.
 
 
-  - Notable fix: Use Redis for Websocket state tracking to allow HDD to spin down when inactive
-
-  - Using queue to improve CLI processing
+  It also includes the v3.2 updates from the previous package, such as the revamped search UI, Search API v2, trusted-user cluster groups for recognizing people in shared assets, tag-based workflow triggers and actions, a dedicated Memories page, tag renaming, and map viewport timelines.
 
 
-  Full release notes are found at https://github.com/immich-app/immich/releases
+  Note: using the new cluster group recognition retroactively requires resetting facial recognition for the group, which removes face names and birth dates for affected machine-learning-recognized faces.
+
+
+  Full release notes can be found at https://github.com/immich-app/immich/releases/tag/v3.2.1
 developer: Alex Tran
 website: https://www.immich.app
 dependencies: []
@@ -73,5 +84,7 @@ gallery:
 path: ""
 defaultUsername: ""
 defaultPassword: ""
+permissions:
+  - GPU
 submitter: levma
 submission: https://github.com/getumbrel/umbrel-apps/pull/239

@@ -2,7 +2,7 @@ manifestVersion: 1
 id: lndg
 category: bitcoin
 name: LNDg
-version: "1.8.0"
+version: "1.11.0"
 tagline: Analyze and automate your Lightning node management
 description: LNDg is your command center for running a profitable and efficient
   routing node. From quickly viewing your node's health, automated rebalancing,
@@ -22,18 +22,15 @@ path: ""
 defaultUsername: lndg-admin
 deterministicPassword: true
 releaseNotes: >-
-  - Auto-Refreshing dashboard (optional)
+  - Added a Peer Offline Report page and richer channel status details
   
-  - Trading page for setup and sale of secrets
+  - Improved payments and invoices data loading, including automatic re-indexing support for migrated LND data
   
-  - Logs page to easily check on backend processes
+  - Upgraded logging, controller reliability, and database connection handling
   
-  - Improvements to the Auto-Fee logic
-  
-  - Fee bump tool added for pending sweeps
-  
-  - Recycle connections with expiring htlcs within 13 blocks
-  
-  - And more... Full details can be found here: https://github.com/cryptosharks131/lndg/releases/tag/v1.8.0
+  - Fixed several channel, fee, and inactive-peer reconnection issues
+
+
+  Full release notes can be found at https://github.com/cryptosharks131/lndg/releases/tag/v1.11.0
 submitter: cryptosharks131
 submission: https://github.com/getumbrel/umbrel/pull/1189

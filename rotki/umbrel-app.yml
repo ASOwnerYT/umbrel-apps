@@ -2,7 +2,7 @@ manifestVersion: 1
 id: rotki
 category: finance
 name: rotki
-version: "1.32.2"
+version: "1.44.0"
 tagline: Portfolio tracking, analytics, accounting and tax reporting
 description: >-
   rotki is an open source portfolio tracking, analytics, accounting and tax reporting tool that protects your privacy. 
@@ -18,6 +18,8 @@ description: >-
   
   
   ⚠️ IMPORTANT ⚠️ Rotki is meant to be accessed locally. Hosting it on a publicly accessible machine should be avoided at all cost, unless you know what you're doing!
+backupIgnore:
+  - data/logs/*
 developer: Rotki
 website: https://rotki.com
 dependencies: []
@@ -25,14 +27,19 @@ repo: https://github.com/rotki/rotki
 support: https://github.com/rotki/rotki/issues
 port: 8084
 releaseNotes: >-
-  This release updates rotki from 1.31.0 to 1.32.2.
-  
-
-  ⚠️ EVM history events will be re-decoded the first time you go to the history events page after you open the new version.
-  This is something that takes a bit of time (depending on amount of events) but is required in order to apply all changes since last release.
+  This major release adds new portfolio analysis workflows, expanded exchange/protocol support, and a Docker runtime overhaul.
 
 
-  Full release notes and changes from previous versions can be found at https://github.com/rotki/rotki/releases
+  Key highlights include:
+    - Added a local MCP server for premium users to analyze rotki data with compatible AI assistants
+    - Redesigned filters, saved views, and history-event actions across the app
+    - Added cross-chain bridge matching, a rebuilt balance snapshot editor, and support for Gate, CoinEx, and Bit2Me
+    - Added new decoders and support for Project X, Frankencoin Savings, Kinetiq, Yearn vesting escrows, Solana staking, Jupiter Lend Earn, Across, LI.FI, and more
+    - History events may need to be redecoded after upgrade; edited events are left untouched
+    - The Docker image now uses a distroless runtime, stops more cleanly, and keeps existing ports, volumes, and environment variables working
+
+
+  Full release notes are found at https://github.com/rotki/rotki/releases/tag/v1.44.0
 gallery:
   - 1.jpg
   - 2.jpg

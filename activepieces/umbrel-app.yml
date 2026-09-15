@@ -1,0 +1,69 @@
+manifestVersion: 1
+id: activepieces
+category: automation
+name: Activepieces
+version: "0.91.0"
+releaseNotes: >-
+  Activepieces 0.91.0 adds saved-agent steps for flows, improves agent audit
+  logs and error handling, and adds or expands pieces for Gmail, Google Drive,
+  Sage Accounting, Ninety, WhatsScale, and more.
+
+
+  This release also improves piece loading during initial cloud sync, fixes
+  GET/HEAD request-body handling, declares more piece runtime dependencies, and
+  addresses flow publishing, OAuth redirects, system-job cleanup, worker queue
+  behavior, migration idempotency, Tables date filtering, and several
+  integration-specific issues.
+
+
+  Breaking changes include worker-group queue behavior, removal of legacy
+  product-embed endpoints, updated synchronous webhook failure responses, AWS
+  IAM/OIDC validation, Kimai auth, agent-step runtime changes, and Docker image
+  process supervision. Review Activepieces' breaking changes before updating
+  production automations or custom integrations.
+
+
+  Full release notes can be found at https://github.com/activepieces/activepieces/releases/tag/0.91.0
+tagline: Your friendliest open source AI automation tool
+description: >-
+  🤯 Welcome to Activepieces
+
+
+  Your friendliest open source all-in-one automation tool, designed to be extensible through a type-safe pieces framework written in Typescript.
+
+
+
+  🔥 Why Activepieces is Different:
+    - 💖 Loved by Everyone: Intuitive interface and great experience for both technical and non-technical users with a quick learning curve.
+
+    - 🌐 Open Ecosystem: All pieces are open source and available on npmjs.com, 60% of the pieces are contributed by the community.
+
+    - 🛠️ Pieces are written in Typescript: Pieces are npm packages in TypeScript, offering full customization with the best developer experience, including hot reloading for local piece development on your machine. 😎
+
+    - 🤖 AI-Ready: Native AI pieces let you experiment with various providers, or create your own agents using our AI SDK, and there is Copilot to help you build flows inside the builder.
+
+    - 🏢 Enterprise-Ready: Developers set up the tools, and anyone in the organization can use the no-code builder. Full customization from branding to control.
+
+    - 🔒 Secure by Design: Self-hosted and network-gapped for maximum security and control over your data.
+
+    - 🧠 Human in the Loop: Delay execution for a period of time or require approval. These are just pieces built on top of the piece framework, and you can build many pieces like that. 🎨
+
+    - 💻 Human Input Interfaces: Built-in support for human input triggers like "Chat Interface" 💬 and "Form Interface" 📝
+developer: Activepieces
+website: https://www.activepieces.com/
+dependencies: []
+repo: https://github.com/activepieces/activepieces/
+support: https://community.activepieces.com/
+port: 8146
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+backupIgnore:
+  - data/app/cache/*
+  - data/redis/*
+submitter: al-lac
+submission: https://github.com/getumbrel/umbrel-apps/pull/2481

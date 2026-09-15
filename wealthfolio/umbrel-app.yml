@@ -1,0 +1,46 @@
+manifestVersion: 1
+id: wealthfolio
+name: Wealthfolio
+tagline: Private investment portfolio tracking
+category: finance
+version: "3.8.0"
+port: 8880
+description: >-
+  Wealthfolio is an open source investment portfolio tracker for monitoring holdings, accounts, performance,
+  and market activity from your own server. It is designed for private wealth tracking, with a browser-based dashboard
+  and local SQLite storage for portfolio data.
+
+
+  Use Wealthfolio to keep a self-hosted view of your investments without sending portfolio details to a third-party
+  tracking service. It supports portfolio and account management, performance views, market data workflows, and a
+  focused web interface for personal finance monitoring.
+developer: Wealthfolio
+website: https://wealthfolio.app/
+repo: https://github.com/wealthfolio/wealthfolio
+support: https://github.com/wealthfolio/wealthfolio/issues
+gallery:
+  - 1.webp
+  - 2.webp
+  - 3.webp
+  - 4.webp
+releaseNotes: >-
+  Important: back up your Wealthfolio database before updating. Wealthfolio 3.8.0 migrates older transactions so amounts include fees and taxes, which can change historical cash balances and returns. After updating, review Activities → Needs review and update all synced devices before adding or editing transactions.
+
+
+  Spending and investment activity lists now load more efficiently, show filtered and selected totals, support foreign-currency cash entries, and add amount-based categorization rules.
+
+
+  Retirement planning adds pension payout-rate options, improved return assumptions, better negative-return and comma-decimal handling, and Lean/Fat FIRE target calculations.
+
+
+  This release adds Italian, Brazilian Portuguese, and Traditional Chinese, expands regional formatting options, improves asset-logo handling, and includes many fixes for cash balances, net worth, imports, performance, privacy mode, quotes, self-hosted OIDC key rotation, and mobile/desktop interface behavior.
+
+
+  Full release notes can be found at https://github.com/wealthfolio/wealthfolio/releases/tag/v3.8.0
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+deterministicPassword: false
+submitter: al-lac
+submission: https://github.com/getumbrel/umbrel-apps/pull/5769

@@ -1,0 +1,39 @@
+manifestVersion: 1
+id: langflow
+name: Langflow
+tagline: Build AI agents and workflows visually
+category: ai
+version: "1.12.1"
+port: 8862
+description: >-
+  Langflow is a visual platform for building and deploying AI-powered agents and workflows.
+  It gives developers a drag-and-drop authoring experience, source-code access for custom Python components,
+  an interactive playground for testing flows, and built-in API and MCP servers that turn workflows into tools for other applications.
+
+
+  Use Langflow to prototype multi-agent systems, retrieval workflows,
+  automations, and LLM applications with support for major model providers,
+  vector databases, observability integrations, and a growing library of AI tools.
+developer: Langflow
+website: https://www.langflow.org/
+submitter: al-lac
+submission: https://github.com/getumbrel/umbrel-apps/pull/5696
+repo: https://github.com/langflow-ai/langflow
+support: https://github.com/langflow-ai/langflow/issues
+gallery:
+  - 1.webp
+  - 2.webp
+  - 3.webp
+  - 4.webp
+  - 5.webp
+releaseNotes: >-
+  Fixes component loading and upgrade behavior, including preserving flow edges after 1.12 upgrades and preventing duplicate or missing custom components.
+
+  Improves model-provider behavior for Watsonx behind LiteLLM, Memory embeddings, provider refreshes, MCP server startup timing, and environment-variable sync for existing users.
+
+  Fixes Knowledge Base name reuse after deletion, failed CLI serve cleanup, and a logging issue when LANGFLOW_LOG_FILE is set.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+deterministicPassword: false

@@ -2,7 +2,7 @@ manifestVersion: 1
 id: robosats
 category: bitcoin
 name: RoboSats
-version: "v0.6.0-alpha"
+version: "v0.8.6-alpha"
 tagline: Simple and Private Bitcoin P2P Exchange
 description: >-
   RoboSats is a simple and private app to exchange bitcoin for national currencies. 
@@ -28,28 +28,42 @@ description: >-
 
   - Strong incentives system: attempts of cheating are penalized with the slashing of the Sats in the fidelity bond.
 
-  - Guides and video tutorials available at https://learn.robosats.com/watch/en
+  - Guides and video tutorials available at https://learn.robosats.org/watch/en
 
 
   You can join other cool Robots and get community support at https://t.me/robosats telegram group.
   
 releaseNotes: >-
-  This is the biggest ever RoboSats update. RoboSats has decentralized! The whole app architecture is new, yet, it should feel as familiar as always.
-  Learn more about why these changes are important on the RoboSats blog https://learn.robosats.com/robosats/update/pre-release-robosats-decentralized/
+  After updating, hard-refresh RoboSats once (Ctrl/Cmd + Shift + R) to load the new client.
 
 
-  - Your RoboSats app connects to multiple trade coordinators simultaneously. This greatly improves robustness and censorship resistance.
+  Highlights:
+
+    - Visual warning for orders with bonds below the default 3%
+    - Libraries security updates
+    - Removed 3 coordinators
+
+  New payment methods:
+
+    - Doordash USA giftcard
+    - Wero
 
 
-  - Robot identities are now generated locally. This improves speed by an order of magnitude as well as identity sovereignty.
-  
-  
-  Full changelog can be found here: https://github.com/Reckless-Satoshi/robosats/compare/v0.5.3-alpha...v0.6.0-alpha
+  Bugs:
 
+    - Infinite loading when reloading/renewing orders now properly catch up
+    - When loading any specific path different from root the app failed.
+    - Crash on mobile devices when switching between Fiat/Swap modes with a payment method selected
+    - Coordinator ratings showed different counts in the list view vs. the detail dialog
+    - UI overlap issue where the bond percentage was displayed simultaneously in both the Bond column and the Premium column on certain screen sizes
+    - Return OK on successful order cancel
+
+
+  Full release notes are available at https://github.com/RoboSats/robosats/releases/tag/v0.8.6-alpha
 developer: RoboSats
-website: https://learn.robosats.com
+website: https://learn.robosats.org
 dependencies: []
-repo: https://github.com/reckless-satoshi/robosats
+repo: https://github.com/RoboSats/robosats
 support: https://t.me/robosats
 port: 12596
 gallery:

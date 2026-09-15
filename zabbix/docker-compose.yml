@@ -1,0 +1,56 @@
+version: "3.7"
+
+services:
+
+  app_proxy:
+    environment:
+      APP_HOST: zabbix_zabbix-frontend_1
+      APP_PORT: 8080
+
+  zabbix-frontend:
+    image: zabbix/zabbix-web-nginx-pgsql:7.4.14-alpine@sha256:81dbfe929984965fc1368da314d0972151d1fa1a247c0f5cf42e35fd0d86c82f
+    hostname: zabbix-frontend
+    restart: on-failure
+    environment:
+      DB_SERVER_HOST: zabbix-database
+      POSTGRES_USER: zabbix
+      POSTGRES_PASSWORD: zabbix
+      ZBX_SERVER_HOST: zabbix-server
+      PHP_TZ: UTC
+    depends_on:
+      - zabbix-server
+      - zabbix-database
+
+  zabbix-server:
+    image: zabbix/zabbix-server-pgsql:7.4.14-alpine@sha256:8037dbf8a4ea23561472eed7cd463f285c4a7443d10a823286eb07319451a66b
+    hostname: zabbix-server
+    restart: on-failure
+    init: true
+    environment:
+      DB_SERVER_HOST: zabbix-database
+      POSTGRES_USER: zabbix
+      POSTGRES_PASSWORD: zabbix
+    ports:
+      - "10050:10050"
+    depends_on:
+      - zabbix-database
+
+  zabbix-agent:
+    image: zabbix/zabbix-agent2:7.4.14-alpine@sha256:4d9859e607425bd7b468fcc8b809606fe5b2ad7d158b856a971da83eff263af8
+    hostname: zabbix-agent
+    restart: on-failure
+    init: true
+    environment:
+      ZBX_HOSTNAME: zabbix-agent
+      ZBX_SERVER_HOST: zabbix-server
+
+  zabbix-database:
+    image: postgres:13.18-alpine3.20@sha256:77815c1f18ae761b0e503503a494475a03149d7ce544934ccecdbafdb3956c94
+    hostname: zabbix-database
+    restart: on-failure
+    environment:
+      POSTGRES_PASSWORD: zabbix
+      POSTGRES_USER: zabbix
+      POSTGRES_DB: zabbix
+    volumes:
+      - ${APP_DATA_DIR}/data/postgres:/var/lib/postgresql/data

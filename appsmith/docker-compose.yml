@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: appsmith_app_1
+      APP_PORT: 80
+      PROXY_AUTH_ADD: "false"
+  
+  app:
+    image: appsmith/appsmith-ce:v2.4@sha256:65f9a4b46d3048972e4b34c1787d2fafe6ebaf2267b0ee9ced168bf1666fec06
+    environment:
+      APPSMITH_ENCRYPTION_PASSWORD: ${APP_PASSWORD}
+      APPSMITH_ENCRYPTION_SALT: ${APP_PASSWORD}
+    volumes:
+      - ${APP_DATA_DIR}/data/app:/appsmith-stacks

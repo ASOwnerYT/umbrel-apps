@@ -2,7 +2,7 @@ manifestVersion: 1.1
 id: gitea
 category: developer
 name: Gitea
-version: "1.21.7"
+version: "1.27.3"
 tagline: A painless self-hosted Git service
 description: >-
   Gitea is a painless self-hosted Git service. It is similar to
@@ -11,23 +11,15 @@ description: >-
   seamlessly on inexpensive hardware like a Raspberry Pi. Features:
 
 
-  - Fully self-hosted and private
-
-  - Issue tracker
-
-  - Account/Organization/Repository management
-
-  - Tor support
-
-  - Repository Git hooks/deploy keys
-
-  - Repository issues, pull requests and wiki
-
-  - Add/Remove repository collaborators
-
-  - Gravatar and custom source
-
-  - Admin panel
+    - Fully self-hosted and private
+    - Issue tracker
+    - Account/Organization/Repository management
+    - Tor support
+    - Repository Git hooks/deploy keys
+    - Repository issues, pull requests and wiki
+    - Add/Remove repository collaborators
+    - Gravatar and custom source
+    - Admin panel
 developer: Gitea
 website: https://gitea.io/en-us/
 dependencies: []
@@ -41,11 +33,14 @@ gallery:
 path: ""
 defaultUsername: ""
 defaultPassword: ""
-releaseNotes: >
-  This is a minor release that includes a number of bug fixes.
+releaseNotes: >-
+  Gitea 1.27.3 is a follow-up to the recent Gitea 1.27 major update. If you're updating from a pre-1.27 version, note that Gitea 1.27 includes breaking changes for reusable workflows and adds Content-Security-Policy script nonces, which may affect custom integrations that rely on old workflow behavior or inline scripts.
 
-  
-  Full release notes can be found at https://github.com/go-gitea/gitea/releases.
+
+  If you're already on Gitea 1.27, this update fixes security issues around package access, repository attachments, markup access checks, Actions artifact signatures, API permissions, hidden repositories, Git hooks, and issue search. It also includes fixes for Actions workflow rendering and validation, repository migrations, pull request merge state, Swift package versioning, dashboard feeds, and user/API handling.
+
+
+  Full release notes: https://github.com/go-gitea/gitea/releases/tag/v1.27.3
 torOnly: false
 submitter: Umbrel
 submission: https://github.com/getumbrel/umbrel/commit/d62e00353917143a3a10d3b376859f51b665d150

@@ -3,7 +3,7 @@ id: audiobookshelf
 name: Audiobookshelf
 tagline: Audiobook and podcast server
 category: media
-version: "2.11.0"
+version: "2.36.0"
 port: 13378
 description: >-
   Features:
@@ -26,7 +26,7 @@ description: >-
   - Backup your metadata + automated daily backups
 
   - Progressive Web App (PWA)
-  
+
   - Chromecast support on the web app and android app
 
   - Fetch metadata and cover art from several sources
@@ -43,8 +43,8 @@ description: >-
   Android App (beta)
 
   - Try it out on the Google Play Store
-  
-  
+
+
   iOS App (early beta)
 
   - Available using Test Flight: https://testflight.apple.com/join/wiic7QIW
@@ -57,78 +57,18 @@ gallery:
   - 2.jpg
   - 3.jpg
 dependencies: []
+permissions:
+  - STORAGE_DOWNLOADS
 path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  This release brings audiobookshelf from version 2.9.0 to 2.11.0.
+  This update adds account session management, including a sessions table and controls to log out individual devices or all devices.
 
+  It also includes security fixes for OIDC callback validation, refresh-token authentication paths, root account deletion, and bulk library item download access checks.
 
-  Added
+  Password changes now invalidate existing sessions, and podcast episode matching has been improved.
 
-  - Create book share links with expiration (admin users only)
-
-  - Email settings option to enable/disable rejecting unauthorized certificates
-
-  - Support for disabling SSRF request filter with env variable
-
-  - Support for custom backup path on backups config page or with env variable
-
-  - Epub ereader setting for font boldness
-
-  - Finnish translations
-
-
-  Fixed
-
-  - Casting podcast episodes
-
-  - Match all authors hitting rate limit
-
-  - Scheduled library scans using old copy of library
-
-  - Changing author name in edit author modal not updating metadata JSON files
-
-  - AB merge tool not working in Debian pkg due to ffmpeg v7
-
-  - Download file ssrfFilter URL
-
-  - Overdrive mediamarkers incorrect timestamp parsing
-
-  - Unhandled exception syncing user progress
-
-  - Server crash from library scanner race condition
-
-  - UI/UX: PDF reader flickering
-
-  - UI/UX: Audio player long author name overflowing
-
-  - UI/UX: Audio player long chapter name overflowing
-
-
-  Changed
-
-  - Replace Tone with Ffmpeg for embedding metadata
-
-  - Playback sessions are closed after 36 hours of inactivity
-
-  - User agent string for podcast RSS feed and file download requests
-
-  - Increased time delay between when watcher detects a file and when it scans the folder
-
-  - Prevent editing backup path if it is set using env variable
-
-  - UI/UX: Show publish date in changelog modal
-
-  - UI/UX: Chapters table "End" column changed to a "Duration" column
-
-  - UI/UX: Bookshelf refactor for consistent scaling
-
-  - UI/UX: Cleaner error page for 404s
-
-  - More strings translated
-
-
-  Full release notes can be found at https://github.com/advplyr/audiobookshelf/releases
+  Full release notes can be found at https://github.com/advplyr/audiobookshelf/releases/tag/v2.36.0
 submitter: Jasper
 submission: https://github.com/getumbrel/umbrel-apps/pull/302

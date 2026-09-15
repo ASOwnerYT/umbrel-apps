@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   dns-server:
-    image: technitium/dns-server:12.1@sha256:f5de7eea6dd85f85656a1ea7584c6af0619bb8b1fa83e5c7992fcf38b76c7ccf
+    image: technitium/dns-server:15.4.0@sha256:df7d90ef0f7b6fff6916d291a7022cd902290cc31c3141d4158b6c375a641b41
     network_mode: host 
     # ports:
       # - "5380:5380/tcp" #DNS web console (HTTP)

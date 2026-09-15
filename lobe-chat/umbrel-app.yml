@@ -1,0 +1,52 @@
+manifestVersion: 1.1
+id: lobe-chat
+name: Lobe Hub
+tagline: Your self-hosted AI workspace for chat, agents, and knowledge
+category: ai
+version: "2.2.17"
+port: 7455
+description: >-
+  💬 Lobe Hub is a self-hosted AI workspace for conversations, agent teams,
+  knowledge bases, and multimodal workflows.
+
+
+  🗣️ It supports speech, multimodal chat, files, knowledge retrieval, and a rich
+  provider ecosystem including OpenAI-compatible APIs, Anthropic, Google, Groq,
+  Ollama, and more.
+
+
+  🤖 This Umbrel package now follows the current upstream self-hosted deployment
+  model and includes PostgreSQL, Redis, and S3-compatible object storage for
+  uploads and knowledge base features.
+
+
+  🔑 To get started, create an account on first launch and then add one or more
+  AI provider API keys in the Lobe Hub settings.
+developer: LobeHub
+website: https://lobehub.com/
+submitter: al-lac
+submission: https://github.com/getumbrel/umbrel-apps/pull/1901
+repo: https://github.com/lobehub/lobehub
+support: https://github.com/lobehub/lobehub/issues
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
+defaultUsername: ""
+defaultPassword: ""
+dependencies: []
+releaseNotes: >-
+  Back up your Lobe Hub data before updating. This update runs an automatic database migration on startup. Leave Lobe Hub running until it finishes. Upstream has not verified downgrading after this migration.
+
+
+  This weekly patch improves agent workflows, Acceptance reviews, Desktop and local-file tools, model support, startup performance, and messaging reliability.
+  Key changes:
+    - Added durable Goal planning, Task activity history, reusable Acceptance checks, grouped review flows, comments, region notes, and approvals
+    - Improved Desktop computer-use workflows, local-file editing, spreadsheet previews, and local HTML Artifact publishing from the CLI
+    - Added new Meta, Unsloth, GPT-6 Astra, Qwen3.8 Max, Gemini 3.8 Flash, and Meta Muse Spark model/provider options
+    - Improved startup performance by deferring more analytics, model catalog, icon picker, editor, and cold-tab loading work
+    - Improved message reliability, team/private Topic isolation, upload reservation handling, Elasticsearch indexing support, and bot collaboration fixes
+
+
+  Full release notes are available at https://github.com/lobehub/lobehub/releases/tag/v2.2.17
+path: ""

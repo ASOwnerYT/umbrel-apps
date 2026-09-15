@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: mstream_server_1
+      APP_PORT: 3000
+
+  server:
+    image: linuxserver/mstream:6.27.0@sha256:a0be4ae00685df22bc0d56538f11d22ed76b967507893b6f26bac95239802dab
+    restart: on-failure
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ${APP_DATA_DIR}/data:/config
+      - ${UMBREL_ROOT}/data/storage/downloads/music:/music

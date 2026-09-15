@@ -2,7 +2,7 @@ manifestVersion: 1
 id: adguard-home
 category: networking
 name: AdGuard Home
-version: "0.107.52"
+version: "0.107.79"
 tagline: Network-wide software for blocking ads and tracking
 description: >-
   ⚠️ See below for important set-up instructions.
@@ -19,10 +19,16 @@ description: >-
   This ensures that the app will not conflict with other apps from the Umbrel App Store, and that the app will be accessible
   when clicking on the app icon in the umbrelOS homescreen.
 releaseNotes: >-
-  In this release we have fixed a number of bugs, migrated our front-end to TypeScript and updated our front-end libraries to improve the quality of development and your user experience.
+  This release updates Go to address upstream Go security fixes and improves DNS-over-QUIC resistance to resource exhaustion attacks.
 
 
-  Full release notes can be found at https://github.com/AdguardTeam/AdGuardHome/releases
+  Bootstrap server configuration now supports comments, install API configuration accepts a language property, and static DHCP lease hostnames can be removed through the HTTP API.
+
+
+  It also fixes DNS64 handling of unresolved CNAME/DNAME chains and blocked requests without EDNS(0) OPT records. The `strict_sni_check` option is now deprecated.
+
+
+  Full release notes can be found at https://github.com/AdguardTeam/AdGuardHome/releases/tag/v0.107.79
 developer: Adguard
 website: https://adguard.com/fr/adguard-home/overview.html
 dependencies: []

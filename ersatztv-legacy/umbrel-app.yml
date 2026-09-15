@@ -1,0 +1,45 @@
+manifestVersion: 1
+id: ersatztv-legacy
+category: media
+name: ErsatzTV Legacy
+version: "26.9.0"
+tagline: Build your own live TV channels
+description: >-
+  ErsatzTV Legacy transforms your personal media library into custom live TV channels with IPTV, XMLTV guide data, channel scheduling, and browser playback.
+
+
+  Connect local media from Umbrel's Downloads folder or libraries from Plex, Jellyfin, and Emby, then create channels that can be watched from IPTV clients, media servers, or a web browser.
+
+
+  Hardware acceleration can be enabled on supported devices by creating a hardware-accelerated FFmpeg profile in ErsatzTV and assigning it to your channels.
+
+
+  This package uses the ErsatzTV Legacy release stream, which upstream continues to maintain for security updates while ErsatzTV Next remains an experimental rewrite.
+releaseNotes: >-
+  - Fixes playout and channel startup issues, including hangs, offline channels after block scheduling, and more reliable playlist and marathon resume behavior after restarts or playout rebuilds.
+  - Fixes several sequential and scripted schedule bugs around shuffled sequence order, repeated sequences, fallback durations, guide groups, and skip-missing-item handling.
+  - Improves media scanning for Plex, Emby, Jellyfin, and local libraries, including more reliable tag ownership and episode/season updates. Libraries affected by lost tags may need a deep scan as upstream notes.
+  - Fixes text subtitle playback, HDHomeRun endpoint behavior when JWT is enabled, XMLTV episode artwork templates, seeking more than 24 hours into content, and episode artwork/title display issues.
+  - Sequential and scripted schedules may start at the wrong item during the first build after upgrading; later builds should be correct.
+
+  Full release notes can be found at https://github.com/ErsatzTV/legacy/releases/tag/v26.9.0
+developer: ErsatzTV
+website: https://ersatztv.org
+dependencies: []
+repo: https://github.com/ErsatzTV/legacy
+support: https://discuss.ersatztv.org
+port: 8409
+gallery:
+  - 1.webp
+  - 2.webp
+  - 3.webp
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+backupIgnore:
+  - data/transcode/*
+permissions:
+  - STORAGE_DOWNLOADS
+  - GPU
+submitter: phelipebf
+submission: https://github.com/getumbrel/umbrel-apps/pull/4624

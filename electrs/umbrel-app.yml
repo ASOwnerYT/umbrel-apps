@@ -2,7 +2,7 @@ manifestVersion: 1.1
 id: electrs
 category: bitcoin
 name: Electrs
-version: "0.10.2"
+version: "0.11.1-patch.1"
 tagline: A simple and efficient Electrum Server
 description: >
   Run your personal Electrum server and connect your Electrum-compatible wallet,
@@ -30,18 +30,14 @@ gallery:
 path: ""
 defaultPassword: ""
 releaseNotes: >
-  This update from version 0.10.1 to 0.10.2 brings a variety of improvements, including:
-  
-
-  - Use batched RPC to fetch mempool entries & transactions
-
-  - Avoid redundant recomputation of fee histogram bins
-
-  - Don't flush when nothing is written to DB
-
-  - Update dependencies
+  This security update upgrades the bundled Tor sidecar to 0.4.9.11, restoring Tor connectivity and including the latest Tor security fixes. The primary app version is unchanged.
 
 
-  Read more at: https://github.com/romanz/electrs/blob/master/RELEASE-NOTES.md#0102-dec-31-2023
+  This update bumps the underlying electrs version to 0.11.1. It improves Electrum API compliance for transaction lookups, adds more flexible network magic configuration, and updates core dependencies.
+
+
+  Full electrs release notes are available at https://github.com/romanz/electrs/blob/master/RELEASE-NOTES.md#0111-feb-22-2026
 submitter: Umbrel
 submission: https://github.com/getumbrel/umbrel/pull/242
+backupIgnore:
+  - data/electrs/db/bitcoin

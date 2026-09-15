@@ -2,7 +2,7 @@ manifestVersion: 1
 id: uptime-kuma
 category: networking
 name: Uptime Kuma
-version: "1.23.13"
+version: "2.5.4"
 tagline: Self-hosted uptime monitoring tool
 description: >
   Uptime Kuma is a self-hosted monitoring tool like Uptime Robot.
@@ -39,13 +39,20 @@ gallery:
 path: ""
 defaultPassword: ""
 releaseNotes: >
-  This release updates Uptime Kuma from version 1.23.12 to 1.23.13 and includes the following bug fixes:
+  New features:
+    - Added Signalgrid, Notify!, and Amoot SMS notification providers
+    - Added an SFTP monitor type with password and private key authentication
 
-  - Fixed language setting issues: Localisation-matching algorithm missing some edgecase
 
-  - Fixed TLS issues: Getting TLS certificate through proxy & prometheus update
-  
+  Improvements:
+    - Added a hide/show password toggle to the login page
 
-  Full release notes can be found at https://github.com/louislam/uptime-kuma/releases
+
+  Bug fixes and security fixes:
+    - Fixed real-browser monitor cleanup, iOS PWA icons, ping timeout validation, and accepted status code ranges on tag creation
+    - Updated jsonata to fix CVE-2026-77415 and addressed a denial-of-service weakness
+
+
+  Full release notes can be found at https://github.com/louislam/uptime-kuma/releases/tag/2.5.4
 submitter: Philipp Haussleiter
 submission: https://github.com/getumbrel/umbrel/pull/1148
